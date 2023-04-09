@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Qlab.AtTests.AtTestGui">
+    <VerticalStackLayout>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Entry Grid.Column="0" Placeholder="Contest ID"/>
+                <Entry Grid.Row="0" Grid.Column="1" Placeholder="Question"/>
+                <Editor Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" FontFamily="Consolas" IsReadOnly="True"/>
+            </Grid>
+            <VerticalStackLayout Grid.Column="1">
+                <Button Text="Load"/>
+                <Button Text="Test"/>
+                <Button Text="Test All"/>
+                <Button Text="Submit"/>
+            </VerticalStackLayout>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
