@@ -8,8 +8,11 @@ namespace Qlab.AtTests;
 
 public partial class AtTestGui : ContentPage
 {
+    AtTestModel model = new AtTestModel();
+
     public AtTestGui()
     {
         InitializeComponent();
+        BindingContext = model.ViewModel;
     }
 }

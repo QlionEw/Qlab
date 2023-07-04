@@ -9,5 +9,6 @@
     <ShellContent 
         Title="AtTest"
         ContentTemplate="{DataTemplate atTests:AtTestGui}"
-        Route="AtTestGui"/>
+        Route="AtTestGui">
+    </ShellContent>
 </Shell>

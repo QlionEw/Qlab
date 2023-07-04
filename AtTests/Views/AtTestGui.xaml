@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Qlab.AtTests.AtTestGui">
     <VerticalStackLayout>
-        
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -19,12 +17,15 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Entry Grid.Column="0" Placeholder="Contest ID"/>
+                <Picker Grid.Column="0" ItemsSource="{Binding Path=Contests}"/>
+                <!--<Entry Text="{Binding Contest.Value}" Grid.Column="0" Placeholder="Contest ID"/>-->
                 <Entry Grid.Row="0" Grid.Column="1" Placeholder="Question"/>
-                <Editor Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" FontFamily="Consolas" IsReadOnly="True"/>
+                <ScrollView Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" Orientation="Vertical" >
+                    <Editor FontFamily="Consolas" IsReadOnly="True" Text="{Binding Path=ConsoleLog.Value, Mode=TwoWay}" AutoSize="TextChanges" />
+                </ScrollView>
             </Grid>
             <VerticalStackLayout Grid.Column="1">
-                <Button Text="Load"/>
+                <Button Text="Load" Command="{Binding LoadCommand}"/>
                 <Button Text="Test"/>
                 <Button Text="Test All"/>
                 <Button Text="Submit"/>
